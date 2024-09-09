@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .time-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            var activities = document.getElementsByClassName('activity');
+
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            for (var i = 0; i < activities.length; i++) {
+                activities[i].style.display = 'block';
+            }
+
+            if (selectedTime === '45') {
+                document.getElementById('activity-2').style.display = 'none';
+            } else if (selectedTime === '40') {
+                document.getElementById('activity-2').style.display = 'none';
+                document.getElementById('activity-4').style.display = 'none';
+            }
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body onload="updateActivities()">
+
+<div class="header">
+    <h1>Playbook - K1 - M04</h1>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+        <label for="time-select">Tiempo efectivo de Clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+
+    <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+<!-- Actividad 1 (3 pasos) -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('saludo_presentacion')">
+        <div class="title">
+            <span>📚 Actividad 1: Saludo y Presentación (3 pasos)</span>
+            <span>⏰ Tiempo: 2.5 minutos</span>
+        </div>
+        <div class="subtitle">Bienvenida al Viaje del Alebrije</div>
+    </div>
+    <div id="saludo_presentacion" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 2 "¡Bienvenidos al Viaje del Alebrije!". Maestros: reciban a los genios con una sonrisa y energía positiva.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">🎉 ¡Hola, genios! Hoy tenemos una misión muy especial, vamos a embarcarnos en un viaje mágico por todo México con la ayuda de nuestro amigo, un alebrije muy especial. ¡El alebrije necesita nuestra ayuda para encontrar su camino por lugares mágicos y misteriosos, y ustedes son los elegidos para guiarlo! ¿Están listos para esta aventura llena de colores y magia? 🌟</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (1 minuto): Mantener la Diapositiva 2. Maestros: introduzcan al alebrije como el protagonista de la misión.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, les presento a nuestro amigo, el alebrije. Este alebrije es un ser mágico que vive en un mundo lleno de aventuras y colores. Hoy, necesita nuestra ayuda para viajar por México y descubrir lugares increíbles como la selva de Chiapas, las pirámides de Teotihuacán y mucho más. Pero para llegar a estos lugares, necesitamos construir caminos especiales usando nuestras piedras mágicas. ¡Vamos a ayudar al alebrije a explorar este mundo mágico! 🐉🌈</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 3 (1 minuto): Mantener la Diapositiva 2. Maestros: animen a los genios a prepararse para construir los caminos mágicos.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Hoy, cada uno de ustedes va a ayudar a construir los caminos mágicos para nuestro alebrije. Usaremos piedras mágicas (nuestros ladrillos de colores) para crear caminos que lo lleven a lugares increíbles. Recuerden, el orden de los colores es muy importante, ¡es lo que hará que el viaje del alebrije sea mágico y especial! ¿Están listos para comenzar esta misión y explorar el mundo mágico de México con nuestro alebrije? ¡Vamos a descubrirlo juntos! 🚀</div>
+        </div>
+    </div>
+</div>
+<!-- Actividad 2 (2 pasos) -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('introduccion_cancion')">
+        <div class="title">
+            <span>📚 Actividad 2: Introducción a la Canción (2 pasos)</span>
+            <span>⏰ Tiempo: 3.5 minutos</span>
+        </div>
+        <div class="subtitle">Canción y Baile sobre Patrones y Secuencias</div>
+    </div>
+    <div id="introduccion_cancion" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 3 "Canción y Baile sobre Patrones y Secuencias". Maestros: asegúrense de que los genios tengan espacio para moverse y bailar.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, antes de comenzar con nuestra misión de ayudar al alebrije, vamos a movernos un poco con una canción muy divertida. Esta canción nos enseñará sobre patrones y secuencias, algo que nos será muy útil para construir los caminos mágicos en nuestro viaje. ¡Así que prepárense para cantar, bailar y seguir los movimientos con mucha energía!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (3 minutos): Proyectar el video de la canción sobre patrones y secuencias. Maestros: guíen a los genios para que sigan los movimientos y canten junto a la canción.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Es hora de cantar y bailar! 🎶 Sigan los patrones y secuencias que aparecen en la canción. Miren bien los colores y los movimientos, y traten de seguirlos todos. ¡Es como un juego, y cada paso nos prepara para guiar al alebrije en su aventura! ¡Vamos, genios, sigan el ritmo y diviértanse! 🌈🎉</div>
+        </div>
+    </div>
+</div>
+<!-- Actividad 3 (3 pasos) -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('formacion_equipos')">
+        <div class="title">
+            <span>📚 Actividad 3: Formación de Equipos de Tres (3 pasos)</span>
+            <span>⏰ Tiempo: 4.5 minutos</span>
+        </div>
+        <div class="subtitle">Formando Equipos para el Viaje</div>
+    </div>
+    <div id="formacion_equipos" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (3 minutos): Proyectar Diapositiva 4 "Formando Equipos de Tres para el Viaje". Maestros: guíen a los genios para que formen equipos de tres niños cada uno.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, para que nuestro alebrije pueda viajar más rápido y seguro, vamos a trabajar en equipos de tres. Miren a su alrededor y encuentren a dos amigos para formar su equipo. Una vez que estén juntos, denle un saludo especial a sus compañeros de equipo. ¡Recuerden que en esta aventura, trabajar en equipo es la clave para ayudar a nuestro alebrije a seguir su camino mágico!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (0.5 minutos): Mantener la Diapositiva 4. Maestros: verifiquen que todos los genios estén organizados en equipos de tres y listos para comenzar.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¿Ya tienen su equipo listo? ¡Perfecto! Ahora que están en sus equipos, recuerden que la comunicación y la colaboración serán muy importantes. Juntos, van a construir los caminos mágicos para que el alebrije pueda viajar por todo México. ¡Es como ser un equipo de exploradores! Asegúrense de que todos en su equipo estén listos para ayudar y compartir sus ideas.</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 3 (1 minuto): Mantener la Diapositiva 4. Maestros: entreguen a cada equipo los ladrillos de colores.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Muy bien, genios! Ahora que tienen a sus equipos listos, vamos a preparar nuestros materiales. Cada equipo recibirá ladrillos de colores. Prepárense para usar toda su creatividad y seguir los patrones para guiar al alebrije en su viaje. ¡Esta aventura depende de su trabajo en equipo! ¿Están listos para empezar? ¡Vamos a prepararnos y comenzar!</div>
+        </div>
+    </div>
+</div>
+<!-- Actividad 4 (5 pasos) -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('calentamiento')">
+        <div class="title">
+            <span>📚 Actividad 4: Introducción al Calentamiento (5 pasos)</span>
+            <span>⏰ Tiempo: 7.5 minutos</span>
+        </div>
+        <div class="subtitle">Construyendo Torres con Secuencias de Colores</div>
+    </div>
+    <div id="calentamiento" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (1 minuto): Proyectar Diapositiva 5 "Construyendo Torres con Secuencias de Colores". Maestros: asegúrense de que cada genio tenga sus ladrillos listos.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, para preparar a nuestro alebrije, vamos a empezar con un calentamiento divertido. Vamos a construir torres usando nuestros bloques, pero hay un truco: ¡tenemos que seguir las secuencias de colores que aparecerán en la pantalla! Cada uno de ustedes va a construir su torre siguiendo exactamente el orden de los colores. ¡Vamos a ver quién puede construir la torre más rápida y precisa!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (2 minutos): Proyectar Diapositiva 6 con la primera secuencia de colores (por ejemplo, rojo, azul, verde). Maestros: asegúrense de que los genios sigan la secuencia correctamente.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Aquí viene la primera secuencia: rojo, azul, verde. Tienen un minuto para construir una torre con sus bloques siguiendo este patrón. ¡Fíjense bien y asegúrense de que los colores estén en el orden correcto! ¿Listos? ¡A construir! ⏰</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 3 (2 minutos): Proyectar Diapositiva 7 con la segunda secuencia de colores (por ejemplo, amarillo, rojo, azul, verde). Maestros: guíen a los genios y asegúrense de que todos sigan la nueva secuencia.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Gran trabajo con la primera secuencia! Ahora vamos con una un poco más larga: amarillo, rojo, azul, verde. Tienen un minuto para construir esta nueva torre. Recuerden seguir bien el orden y construir con cuidado. ¡Vamos, genios, sigan adelante! ⏰</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 4 (2 minutos): Proyectar Diapositiva 8 con la tercera secuencia de colores (por ejemplo, verde, naranja, azul, rojo, amarillo). Maestros: verifiquen que los genios estén construyendo correctamente la secuencia final.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Están haciendo un trabajo increíble, genios! Aquí va la última secuencia: verde, naranja, azul, rojo, amarillo. Tienen un minuto para completar esta torre. ¡Este es el último reto del calentamiento, así que den lo mejor de ustedes y asegúrense de que los colores estén en el orden correcto! ⏰</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 5 (0.5 minutos): Proyectar Diapositiva 9 "Preparando para el Desafío del Alebrije". Maestros: refuercen la conexión entre el calentamiento y la actividad principal.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Lo hicieron genial, genios! Ahora que ya saben cómo seguir secuencias, están listos para ayudar al alebrije a viajar por el mundo mágico. Usen todo lo que aprendieron hoy para construir los caminos mágicos. ¡El alebrije confía en ustedes para guiarlo a través de estos increíbles lugares de México! ¿Están listos para la misión principal? ¡Vamos a empezar! 🚀</div>
+        </div>
+    </div>
+</div>
+<!-- Actividad 5 (9 pasos) -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('desafio_principal')">
+        <div class="title">
+            <span>📚 Actividad 5: Introducción al Desafío Principal (9 pasos)</span>
+            <span>⏰ Tiempo: 22 minutos</span>
+        </div>
+        <div class="subtitle">Construyendo Caminos Mágicos para el Alebrije</div>
+    </div>
+    <div id="desafio_principal" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (1 minuto): Proyectar Diapositiva 10 "Construyendo Caminos Mágicos para el Alebrije". Maestros: asegúrense de que todos los genios entiendan la misión.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, ha llegado el momento de la gran misión. Nuestro alebrije necesita cruzar por tres lugares mágicos de México: la selva de Chiapas, las pirámides de Teotihuacán y el mar de Cancún. Para ayudarlo, tenemos que construir caminos mágicos con nuestros bloques de colores. Estos caminos deben seguir los patrones mágicos que verán en la pantalla. Si logramos construirlos bien, nuestro alebrije podrá viajar seguro y sin problemas. ¡Vamos a hacer que esta aventura sea increíble! 🌟</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (0.5 minutos): Proyectar Diapositiva 11 con los tres patrones de colores. Maestros: guíen a los genios para asegurarse de que entienden los patrones.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Miren la pantalla, genios. Aquí están los patrones mágicos que necesitamos seguir. Cada patrón es como un hechizo que ayudará al alebrije a cruzar por los diferentes lugares. Tienen que usar sus bloques para construir los caminos siguiendo exactamente estos patrones. Recuerden, cada camino debe llevar al alebrije desde sus asientos hasta los lugares mágicos designados en el salón.</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 3 (0.5 minutos): Mantener la Diapositiva 11. Maestros: verifiquen que cada equipo esté organizado con los bloques y listos para comenzar.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Antes de empezar, asegúrense de que sus equipos están listos y tienen todos los bloques necesarios. Cada equipo debe tener suficientes bloques para construir los tres caminos. Tómense un momento para revisar sus materiales y asegurarse de que todos entienden los patrones a seguir. ¡Preparados y organizados, genios!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 4 (1 minuto): Mantener la Diapositiva 11. Maestros: animen a los genios a planificar su construcción y a discutir la mejor manera de seguir los patrones.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Ahora, hablen entre ustedes y planifiquen cómo van a construir los caminos. Recuerden, deben seguir los patrones de colores que ven en la pantalla y asegurarse de que sus caminos sean lo suficientemente largos para llegar a los lugares mágicos. Tómense un minuto para discutir su estrategia. ¡Trabajar juntos es clave para el éxito del alebrije!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 5 (5 minuto): Mantener la Diapositiva 11. Maestros: circulen por el aula para guiar y apoyar a los genios mientras construyen el primer camino.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Es hora de comenzar con el primer camino. Usen sus bloques y sigan el primer patrón en la pantalla. Recuerden, el camino debe llevar desde sus asientos hasta el primer lugar mágico designado en el salón. Trabajen en equipo y asegúrense de que los bloques estén en el orden correcto. ¡Vamos genios, el alebrije confía en ustedes para hacer este camino!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 6 (5 minuto): Mantener la Diapositiva 11. Maestros: continúen apoyando a los genios mientras construyen el segundo camino.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, excelente trabajo con el primer camino. Ahora sigan con el segundo patrón y construyan el siguiente camino. Asegúrense de que los bloques siguen el patrón de colores en la pantalla. ¡Recuerden que nuestro objetivo es llegar al segundo lugar mágico, las pirámides de Teotihuacán! ¡Sigan trabajando en equipo y construyendo con cuidado!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 7 (5 minuto): Mantener la Diapositiva 11. Maestros: asegúrense de que los genios completan el tercer camino correctamente.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Ya casi terminamos, genios! Ahora es el turno del tercer y último camino. Usen el tercer patrón de colores para construir el camino hacia el último lugar mágico, el mar de Cancún. Este es el último reto, así que asegúrense de que los bloques estén bien colocados y que el camino esté completo. ¡Vamos genios, juntos podemos hacer que el alebrije llegue a su destino final!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 8 (3 minutos): Mantener la Diapositiva 11. Maestros: revisen los caminos con los genios y asegúrense de que todos los patrones se han seguido correctamente.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Tiempo, genios! Vamos a revisar los caminos que construyeron. Asegúrense de que cada camino sigue los patrones mágicos correctamente y que llegan a los lugares designados. Si todo está en orden, el alebrije podrá cruzar sin problemas y completar su viaje. ¡Vamos a ver si nuestros caminos mágicos funcionan!</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 9 (1 minuto): Proyectar Diapositiva 12 "¡Viaje Completo del Alebrije!". Maestros: celebren con los genios el éxito de la misión y refuercen el trabajo en equipo y el aprendizaje de la actividad.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">¡Lo lograron, genios! Nuestro alebrije ha completado su viaje gracias a sus caminos mágicos. Han demostrado ser excelentes constructores y seguir instrucciones es su súper poder. ¡Celebremos juntos porque nuestro alebrije ha visitado todos los lugares mágicos de México! Gracias a ustedes, el alebrije ha tenido una aventura increíble. ¡Felicidades, genios! 🌟🎉</div>
+        </div>
+    </div>
+</div>
+<!-- Actividad 6 (3 pasos) -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('honor_dojo')">
+        <div class="title">
+            <span>📚 Actividad 6: Honor The Dojo (3 pasos)</span>
+            <span>⏰ Tiempo: 5 minutos</span>
+        </div>
+        <div class="subtitle">Recogiendo después del Viaje</div>
+    </div>
+    <div id="honor_dojo" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1 (3 minuto): Proyectar Diapositiva 13 "Honor The Dojo: Recogiendo después del Viaje". Maestros: guíen a los genios para recoger sus bloques y cualquier material utilizado.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, han hecho un trabajo espectacular ayudando al alebrije a completar su viaje mágico. Ahora, antes de cerrar nuestra misión, vamos a hacer algo muy importante: recoger nuestros bloques y materiales, y dejarlos ordenados. ¡Así preparamos nuestro dojo para la próxima gran aventura! Gracias por ser responsables y cuidar de nuestro espacio de aprendizaje. 🌈</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 2 (1 minuto): Mantener la Diapositiva 13. Maestros: inviten a los genios a compartir lo que más disfrutaron de la misión y resalten los logros del día.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Hoy hicimos algo muy especial juntos, genios. No solo ayudamos a nuestro alebrije a viajar por México, sino que aprendimos sobre secuencias, patrones y la importancia de seguir instrucciones. Gracias por su entusiasmo, por trabajar en equipo y por poner tanta dedicación en cada camino que construyeron. ¿Quién quiere compartir qué fue lo que más les gustó de esta aventura?</div>
+        </div>
+        <div class="section">
+            <div class="step-title">Paso 3 (1 minuto): Proyectar Diapositiva 14 "¡Gracias por ser los mejores guías del alebrije!". Maestros: despidan a los genios con una sonrisa y energía positiva, animándolos a seguir explorando y aprendiendo.</div>
+            <div class="section-title">Diálogo del Maestro</div>
+            <div class="dialogue">Genios, su misión de hoy fue un éxito total. Nuestro alebrije está muy agradecido y emocionado por todo lo que pudo explorar gracias a ustedes. ¡Son verdaderos héroes de los caminos mágicos! Ahora, para despedirnos, vamos a celebrar con un gran aplauso y un movimiento especial: si les gustó la clase de hoy, levanten los brazos como si fueran alas de alebrije y agítenlos en el aire. ¡Gracias por ser parte de esta aventura mágica! ¡Nos vemos en la próxima misión, genios! 🎉🦋</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>
